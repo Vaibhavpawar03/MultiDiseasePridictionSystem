@@ -1,0 +1,83 @@
+/* GENERAL */
+body {
+    background-color: #f5f7fa;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* NAVBAR */
+.custom-navbar {
+    background: linear-gradient(90deg, #0d6efd, #0b5ed7);
+}
+
+/* HERO */
+.hero-section {
+    background: linear-gradient(to right, #eef2ff, #f8fafc);
+}
+
+.min-vh-75 {
+    min-height: 75vh;
+}
+
+/* CARD STYLING */
+.card {
+    border-radius: 12px;
+    border: none;
+}
+
+.info-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+/* FEATURE LIST */
+.feature-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.feature-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* DISEASE CARDS */
+.disease-card {
+    transition: all 0.3s ease;
+}
+
+.disease-card:hover {
+    transform: translateY(-8px);
+}
+
+.disease-icon {
+    font-size: 40px;
+}
+
+/* BUTTONS */
+.btn {
+    border-radius: 8px;
+}
+
+/* RESULT BOX */
+#resultBox {
+    border-left: 5px solid #0d6efd;
+}
+
+/* FOOTER */
+.footer-section {
+    background: #111;
+    color: #fff;
+}
+
+/* TABLE */
+.table {
+    font-size: 14px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 28px;
+    }
+}
