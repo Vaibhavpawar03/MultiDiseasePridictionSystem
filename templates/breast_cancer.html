@@ -20,13 +20,16 @@
 <div class="container py-5">
 
     <div class="card shadow p-4">
-        <h3 class="mb-4 text-center">Enter Patient Details</h3>
+        <h3 class="mb-3 text-center">Enter Patient Details</h3>
+        <p class="text-muted text-center mb-4">
+            Fill details from the medical report. If you are unsure, choose the closest option.
+        </p>
 
         <form id="breastCancerForm">
 
             <div class="row mb-3">
                 <div class="col-md-4">
-                    <label>Name</label>
+                    <label>Patient Name</label>
                     <input type="text" class="form-control" name="patient_name" required>
                 </div>
 
@@ -43,73 +46,283 @@
                 </div>
             </div>
 
-            <h5 class="mt-4 mb-3">Mean Values</h5>
+            <h5 class="mt-4 mb-3">Basic Details from Report</h5>
             <div class="row mb-3">
-                <div class="col-md-4"><label>Radius Mean</label><select class="form-control" name="radius_mean"><option value="low">Low</option><option value="normal">Normal</option><option value="high">High</option></select></div>
-                <div class="col-md-4"><label>Texture Mean</label><select class="form-control" name="texture_mean"><option value="low">Low</option><option value="normal">Normal</option><option value="high">High</option></select></div>
-                <div class="col-md-4"><label>Perimeter Mean</label><select class="form-control" name="perimeter_mean"><option value="low">Low</option><option value="normal">Normal</option><option value="high">High</option></select></div>
+                <div class="col-md-4">
+                    <label>Tumor Size</label>
+                    <select class="form-control" name="radius_mean">
+                        <option value="low">Low / Small</option>
+                        <option value="normal">Normal / Medium</option>
+                        <option value="high">High / Large</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label>Surface Pattern</label>
+                    <select class="form-control" name="texture_mean">
+                        <option value="low">Low / Smooth</option>
+                        <option value="normal">Normal</option>
+                        <option value="high">High / Rough</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label>Outer Size</label>
+                    <select class="form-control" name="perimeter_mean">
+                        <option value="low">Low / Small</option>
+                        <option value="normal">Normal / Medium</option>
+                        <option value="high">High / Large</option>
+                    </select>
+                </div>
             </div>
 
             <div class="row mb-3">
-                <div class="col-md-4"><label>Area Mean</label><select class="form-control" name="area_mean"><option value="low">Low</option><option value="normal">Normal</option><option value="high">High</option></select></div>
-                <div class="col-md-4"><label>Smoothness Mean</label><select class="form-control" name="smoothness_mean"><option value="low">Low</option><option value="normal">Normal</option><option value="high">High</option></select></div>
-                <div class="col-md-4"><label>Compactness Mean</label><select class="form-control" name="compactness_mean"><option value="low">Low</option><option value="normal">Normal</option><option value="high">High</option></select></div>
+                <div class="col-md-4">
+                    <label>Covered Area</label>
+                    <select class="form-control" name="area_mean">
+                        <option value="low">Low / Small</option>
+                        <option value="normal">Normal / Medium</option>
+                        <option value="high">High / Large</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label>Surface Smoothness</label>
+                    <select class="form-control" name="smoothness_mean">
+                        <option value="low">Low / Less Smooth</option>
+                        <option value="normal">Normal</option>
+                        <option value="high">High / More Smooth</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label>Hardness / Tightness</label>
+                    <select class="form-control" name="compactness_mean">
+                        <option value="low">Low / Loose</option>
+                        <option value="normal">Normal</option>
+                        <option value="high">High / Tight</option>
+                    </select>
+                </div>
             </div>
 
             <div class="row mb-3">
-                <div class="col-md-4"><label>Concavity Mean</label><select class="form-control" name="concavity_mean"><option value="low">Low</option><option value="normal">Normal</option><option value="high">High</option></select></div>
-                <div class="col-md-4"><label>Concave Points Mean</label><select class="form-control" name="concave_points_mean"><option value="low">Low</option><option value="normal">Normal</option><option value="high">High</option></select></div>
-                <div class="col-md-4"><label>Symmetry Mean</label><select class="form-control" name="symmetry_mean"><option value="low">Low</option><option value="normal">Normal</option><option value="high">High</option></select></div>
+                <div class="col-md-4">
+                    <label>Shape Irregularity</label>
+                    <select class="form-control" name="concavity_mean">
+                        <option value="low">Low / Regular</option>
+                        <option value="normal">Normal</option>
+                        <option value="high">High / Irregular</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label>Dents in Shape</label>
+                    <select class="form-control" name="concave_points_mean">
+                        <option value="low">Low / Few</option>
+                        <option value="normal">Normal</option>
+                        <option value="high">High / Many</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label>Shape Balance</label>
+                    <select class="form-control" name="symmetry_mean">
+                        <option value="low">Low / Uneven</option>
+                        <option value="normal">Normal</option>
+                        <option value="high">High / Even</option>
+                    </select>
+                </div>
             </div>
 
             <div class="row mb-4">
-                <div class="col-md-4"><label>Fractal Dimension Mean</label><select class="form-control" name="fractal_dimension_mean"><option value="low">Low</option><option value="normal">Normal</option><option value="high">High</option></select></div>
+                <div class="col-md-4">
+                    <label>Shape Complexity</label>
+                    <select class="form-control" name="fractal_dimension_mean">
+                        <option value="low">Low / Simple</option>
+                        <option value="normal">Normal</option>
+                        <option value="high">High / Complex</option>
+                    </select>
+                </div>
             </div>
 
-            <h5 class="mt-4 mb-3">Standard Error Values</h5>
+            <h5 class="mt-4 mb-3">Changes Seen in Report</h5>
             <div class="row mb-3">
-                <div class="col-md-4"><label>Radius SE</label><select class="form-control" name="radius_se"><option value="low">Low</option><option value="normal">Normal</option><option value="high">High</option></select></div>
-                <div class="col-md-4"><label>Texture SE</label><select class="form-control" name="texture_se"><option value="low">Low</option><option value="normal">Normal</option><option value="high">High</option></select></div>
-                <div class="col-md-4"><label>Perimeter SE</label><select class="form-control" name="perimeter_se"><option value="low">Low</option><option value="normal">Normal</option><option value="high">High</option></select></div>
+                <div class="col-md-4">
+                    <label>Size Changes</label>
+                    <select class="form-control" name="radius_se">
+                        <option value="low">Low / Minor</option>
+                        <option value="normal">Normal</option>
+                        <option value="high">High / Major</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label>Surface Changes</label>
+                    <select class="form-control" name="texture_se">
+                        <option value="low">Low / Minor</option>
+                        <option value="normal">Normal</option>
+                        <option value="high">High / Major</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label>Outer Size Changes</label>
+                    <select class="form-control" name="perimeter_se">
+                        <option value="low">Low / Minor</option>
+                        <option value="normal">Normal</option>
+                        <option value="high">High / Major</option>
+                    </select>
+                </div>
             </div>
 
             <div class="row mb-3">
-                <div class="col-md-4"><label>Area SE</label><select class="form-control" name="area_se"><option value="low">Low</option><option value="normal">Normal</option><option value="high">High</option></select></div>
-                <div class="col-md-4"><label>Smoothness SE</label><select class="form-control" name="smoothness_se"><option value="low">Low</option><option value="normal">Normal</option><option value="high">High</option></select></div>
-                <div class="col-md-4"><label>Compactness SE</label><select class="form-control" name="compactness_se"><option value="low">Low</option><option value="normal">Normal</option><option value="high">High</option></select></div>
+                <div class="col-md-4">
+                    <label>Area Changes</label>
+                    <select class="form-control" name="area_se">
+                        <option value="low">Low / Minor</option>
+                        <option value="normal">Normal</option>
+                        <option value="high">High / Major</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label>Smoothness Changes</label>
+                    <select class="form-control" name="smoothness_se">
+                        <option value="low">Low / Minor</option>
+                        <option value="normal">Normal</option>
+                        <option value="high">High / Major</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label>Hardness Changes</label>
+                    <select class="form-control" name="compactness_se">
+                        <option value="low">Low / Minor</option>
+                        <option value="normal">Normal</option>
+                        <option value="high">High / Major</option>
+                    </select>
+                </div>
             </div>
 
             <div class="row mb-3">
-                <div class="col-md-4"><label>Concavity SE</label><select class="form-control" name="concavity_se"><option value="low">Low</option><option value="normal">Normal</option><option value="high">High</option></select></div>
-                <div class="col-md-4"><label>Concave Points SE</label><select class="form-control" name="concave_points_se"><option value="low">Low</option><option value="normal">Normal</option><option value="high">High</option></select></div>
-                <div class="col-md-4"><label>Symmetry SE</label><select class="form-control" name="symmetry_se"><option value="low">Low</option><option value="normal">Normal</option><option value="high">High</option></select></div>
+                <div class="col-md-4">
+                    <label>Shape Changes</label>
+                    <select class="form-control" name="concavity_se">
+                        <option value="low">Low / Minor</option>
+                        <option value="normal">Normal</option>
+                        <option value="high">High / Major</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label>Dent Changes</label>
+                    <select class="form-control" name="concave_points_se">
+                        <option value="low">Low / Minor</option>
+                        <option value="normal">Normal</option>
+                        <option value="high">High / Major</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label>Balance Changes</label>
+                    <select class="form-control" name="symmetry_se">
+                        <option value="low">Low / Minor</option>
+                        <option value="normal">Normal</option>
+                        <option value="high">High / Major</option>
+                    </select>
+                </div>
             </div>
 
             <div class="row mb-4">
-                <div class="col-md-4"><label>Fractal Dimension SE</label><select class="form-control" name="fractal_dimension_se"><option value="low">Low</option><option value="normal">Normal</option><option value="high">High</option></select></div>
+                <div class="col-md-4">
+                    <label>Complexity Changes</label>
+                    <select class="form-control" name="fractal_dimension_se">
+                        <option value="low">Low / Minor</option>
+                        <option value="normal">Normal</option>
+                        <option value="high">High / Major</option>
+                    </select>
+                </div>
             </div>
 
-            <h5 class="mt-4 mb-3">Worst Values</h5>
+            <h5 class="mt-4 mb-3">Highest Values Seen in Report</h5>
             <div class="row mb-3">
-                <div class="col-md-4"><label>Radius Worst</label><select class="form-control" name="radius_worst"><option value="low">Low</option><option value="normal">Normal</option><option value="high">High</option></select></div>
-                <div class="col-md-4"><label>Texture Worst</label><select class="form-control" name="texture_worst"><option value="low">Low</option><option value="normal">Normal</option><option value="high">High</option></select></div>
-                <div class="col-md-4"><label>Perimeter Worst</label><select class="form-control" name="perimeter_worst"><option value="low">Low</option><option value="normal">Normal</option><option value="high">High</option></select></div>
+                <div class="col-md-4">
+                    <label>Largest Tumor Size</label>
+                    <select class="form-control" name="radius_worst">
+                        <option value="low">Low / Small</option>
+                        <option value="normal">Normal / Medium</option>
+                        <option value="high">High / Large</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label>Most Rough Surface</label>
+                    <select class="form-control" name="texture_worst">
+                        <option value="low">Low / Smooth</option>
+                        <option value="normal">Normal</option>
+                        <option value="high">High / Rough</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label>Largest Outer Size</label>
+                    <select class="form-control" name="perimeter_worst">
+                        <option value="low">Low / Small</option>
+                        <option value="normal">Normal / Medium</option>
+                        <option value="high">High / Large</option>
+                    </select>
+                </div>
             </div>
 
             <div class="row mb-3">
-                <div class="col-md-4"><label>Area Worst</label><select class="form-control" name="area_worst"><option value="low">Low</option><option value="normal">Normal</option><option value="high">High</option></select></div>
-                <div class="col-md-4"><label>Smoothness Worst</label><select class="form-control" name="smoothness_worst"><option value="low">Low</option><option value="normal">Normal</option><option value="high">High</option></select></div>
-                <div class="col-md-4"><label>Compactness Worst</label><select class="form-control" name="compactness_worst"><option value="low">Low</option><option value="normal">Normal</option><option value="high">High</option></select></div>
+                <div class="col-md-4">
+                    <label>Largest Covered Area</label>
+                    <select class="form-control" name="area_worst">
+                        <option value="low">Low / Small</option>
+                        <option value="normal">Normal / Medium</option>
+                        <option value="high">High / Large</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label>Least Smooth Surface</label>
+                    <select class="form-control" name="smoothness_worst">
+                        <option value="low">Low / Less Smooth</option>
+                        <option value="normal">Normal</option>
+                        <option value="high">High / More Smooth</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label>Highest Hardness</label>
+                    <select class="form-control" name="compactness_worst">
+                        <option value="low">Low / Soft</option>
+                        <option value="normal">Normal</option>
+                        <option value="high">High / Hard</option>
+                    </select>
+                </div>
             </div>
 
             <div class="row mb-3">
-                <div class="col-md-4"><label>Concavity Worst</label><select class="form-control" name="concavity_worst"><option value="low">Low</option><option value="normal">Normal</option><option value="high">High</option></select></div>
-                <div class="col-md-4"><label>Concave Points Worst</label><select class="form-control" name="concave_points_worst"><option value="low">Low</option><option value="normal">Normal</option><option value="high">High</option></select></div>
-                <div class="col-md-4"><label>Symmetry Worst</label><select class="form-control" name="symmetry_worst"><option value="low">Low</option><option value="normal">Normal</option><option value="high">High</option></select></div>
+                <div class="col-md-4">
+                    <label>Most Irregular Shape</label>
+                    <select class="form-control" name="concavity_worst">
+                        <option value="low">Low / Regular</option>
+                        <option value="normal">Normal</option>
+                        <option value="high">High / Irregular</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label>Most Dents in Shape</label>
+                    <select class="form-control" name="concave_points_worst">
+                        <option value="low">Low / Few</option>
+                        <option value="normal">Normal</option>
+                        <option value="high">High / Many</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label>Most Uneven Shape</label>
+                    <select class="form-control" name="symmetry_worst">
+                        <option value="low">Low / Even</option>
+                        <option value="normal">Normal</option>
+                        <option value="high">High / Uneven</option>
+                    </select>
+                </div>
             </div>
 
             <div class="row mb-4">
-                <div class="col-md-4"><label>Fractal Dimension Worst</label><select class="form-control" name="fractal_dimension_worst"><option value="low">Low</option><option value="normal">Normal</option><option value="high">High</option></select></div>
+                <div class="col-md-4">
+                    <label>Most Complex Shape</label>
+                    <select class="form-control" name="fractal_dimension_worst">
+                        <option value="low">Low / Simple</option>
+                        <option value="normal">Normal</option>
+                        <option value="high">High / Complex</option>
+                    </select>
+                </div>
             </div>
 
             <div class="text-center">

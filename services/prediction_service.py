@@ -55,6 +55,7 @@ class PredictionService:
         patient_name = data.get("patient_name", "").strip()
         age = int(data.get("age", 0))
         gender = data.get("gender", "male")
+        sex = map_gender(gender)
 
         pregnancies = float(data.get("pregnancies", 0))
         glucose = map_level(data.get("glucose"))
@@ -73,6 +74,8 @@ class PredictionService:
             insulin,
             bmi,
             diabetes_pedigree,
+            age,
+            sex,
             age_level
         ]
 

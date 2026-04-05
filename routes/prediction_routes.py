@@ -11,16 +11,29 @@ def predict_diabetes():
         data = request.get_json()
 
         if not data:
-            return jsonify({"success": False, "message": "No input data provided"}), 400
+            return jsonify({
+                "success": False,
+                "message": "No input data provided"
+            }), 400
 
         required_fields = [
-            "patient_name", "age", "gender",
-            "pregnancies", "glucose", "blood_pressure",
-            "skin_thickness", "insulin", "bmi",
-            "diabetes_pedigree", "age_level"
+            "patient_name",
+            "age",
+            "gender",
+            "pregnancies",
+            "glucose",
+            "blood_pressure",
+            "skin_thickness",
+            "insulin",
+            "bmi",
+            "diabetes_pedigree",
+            "age_level"
         ]
 
-        missing_fields = [field for field in required_fields if field not in data or str(data[field]).strip() == ""]
+        missing_fields = [
+            field for field in required_fields
+            if field not in data or str(data[field]).strip() == ""
+        ]
 
         if missing_fields:
             return jsonify({
@@ -37,11 +50,22 @@ def predict_diabetes():
         }), 200
 
     except ValueError as e:
-        return jsonify({"success": False, "message": f"Invalid input: {str(e)}"}), 400
+        return jsonify({
+            "success": False,
+            "message": f"Invalid input: {str(e)}"
+        }), 400
+
     except FileNotFoundError as e:
-        return jsonify({"success": False, "message": str(e)}), 500
+        return jsonify({
+            "success": False,
+            "message": str(e)
+        }), 500
+
     except Exception as e:
-        return jsonify({"success": False, "message": f"Server error: {str(e)}"}), 500
+        return jsonify({
+            "success": False,
+            "message": f"Server error: {str(e)}"
+        }), 500
 
 
 @prediction_bp.route("/predict/heart", methods=["POST"])
@@ -158,4 +182,3 @@ def get_single_history(history_id):
 
     except Exception as e:
         return jsonify({"success": False, "message": f"Server error: {str(e)}"}), 500
-    
